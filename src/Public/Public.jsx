@@ -1,10 +1,11 @@
 import RiceDetails from "./Module/Foods/RiceDetails/RiceDetails";
 import Header from "./Module/Shared/Header/Header";
 import Navbar from "./Module/Shared/Navbar/Navbar";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Router } from "react-router-dom";
 import BreadDetails from "./Module/Foods/BreadDetails/BreadDetails";
 import NoodlesDetails from "./Module/Foods/NoodlesDetails/NoodlesDetails";
 import Coffee from "./Module/Drinks/Coffee/Coffee";
+import SoftDrinks from "./Module/Drinks/SoftDrinks/SoftDrinks";
 
 const Public = () => {
   return (
@@ -22,7 +23,10 @@ const Public = () => {
               <Route path="/noodles-details" exact>
                 <NoodlesDetails />
               </Route>
-             
+              <Route path="/soft-drinks" exact>
+                <SoftDrinks />
+              </Route>
+
               <Route path="/coffee" exact>
                 <Coffee />
               </Route>

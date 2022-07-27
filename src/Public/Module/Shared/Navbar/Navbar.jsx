@@ -97,9 +97,9 @@ const Navbar = () => {
         <ul className="nav flex-column sub-menu">
           <li className="nav-item">
             {" "}
-            <a className="nav-link" href="">
+            <Link className="nav-link" href="view">
               View
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
