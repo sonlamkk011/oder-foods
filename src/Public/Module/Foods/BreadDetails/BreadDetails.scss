@@ -1,0 +1,44 @@
+#bread-details{
+    margin-top: 100px;
+
+    .font{
+        font-size: 50px;
+        color: #82ae46;
+        margin-bottom: 1rem;
+    }
+
+    .item-food{
+        box-shadow: 10px 30px 50px 10px rgb(0 0 0 / 10%);
+        width: 300px;
+        height: 300px;
+        background-color: #fff;
+        border-radius: 15px;
+
+        .name-item{
+          font-size: 1.14285714rem;
+        line-height: 1.5;
+        font-weight: 400;
+        font-weight: 500;
+        color: #1c1c1c;
+        margin-bottom: 4px;
+        height: 1.5em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-left: 20px;
+        margin-top: 15px;
+    
+        }
+        
+      }
+      .icon{
+        width: 100px;
+        margin-top: 8px;
+        margin-left: 20px;
+        border-radius: 8px;
+      }
+      .icon-count{
+        float: right;
+        margin-right: 15px;
+        border-radius: 8px;
+    }
+}
