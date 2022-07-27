@@ -1,6 +1,8 @@
 import Public from "../../../Public";
 import RiceDetails from "../../Foods/RiceDetails/RiceDetails";
 import Navbar from "../Navbar/Navbar";
+import FastfoodIcon from '@mui/icons-material/Fastfood';
+
 import "./Header.scss";
 
 const Header = () => {
@@ -11,7 +13,8 @@ const Header = () => {
           <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
               <a className="navbar-brand brand-logo mr-5" href="/">
-                <img src="Assets/images/logo.svg" className="mr-2" alt="logo" />
+              Oder<FastfoodIcon /> Food
+
               </a>
               <a className="navbar-brand brand-logo-mini" href="/">
                 <img src="Assets/images/logo-mini.svg" alt="logo" />

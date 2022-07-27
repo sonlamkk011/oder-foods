@@ -6,6 +6,7 @@ import BreadDetails from "./Module/Foods/BreadDetails/BreadDetails";
 import NoodlesDetails from "./Module/Foods/NoodlesDetails/NoodlesDetails";
 import Coffee from "./Module/Drinks/Coffee/Coffee";
 import SoftDrinks from "./Module/Drinks/SoftDrinks/SoftDrinks";
+import Home from "./Module/Home/Home";
 
 const Public = () => {
   return (
@@ -14,6 +15,9 @@ const Public = () => {
         <div className="container">
           <BrowserRouter>
             <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
               <Route path="/rice-details" exact>
                 <RiceDetails />
               </Route>
