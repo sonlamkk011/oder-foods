@@ -33,8 +33,8 @@ const RiceDetails = () => {
 
   return (
     <>
-      <Header />
-      <Navbar />
+      {/* <Header />
+      <Navbar /> */}
       <div id="rice-details">
         <div className="container">
           <div className="row">

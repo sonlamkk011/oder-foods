@@ -19,7 +19,7 @@ const SidebarAdmin = () => {
              
              
               <li className="nav-item">
-                <Link to="/admin-create-foods"
+                <Link to="/admin/create-foods"
                   className="nav-link"
                   
                 >

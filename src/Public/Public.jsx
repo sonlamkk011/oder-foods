@@ -1,28 +1,33 @@
-import { BrowserRouter, Switch, Route, Router } from "react-router-dom";
-import Login from "./Module/Auth/Login/Login";
+import { Route, Routes } from "react-router-dom";
+import Coffee from "./Module/Home/Drinks/Coffee/Coffee";
+import SoftDrinks from "./Module/Home/Drinks/SoftDrinks/SoftDrinks";
 import BreadDetails from "./Module/Home/Foods/BreadDetails/BreadDetails";
+import NoodlesDetails from "./Module/Home/Foods/NoodlesDetails/NoodlesDetails";
 import RiceDetails from "./Module/Home/Foods/RiceDetails/RiceDetails";
 import Home from "./Module/Home/Home";
+import Header from "./Module/Shared/Header/Header";
+import Navbar from "./Module/Shared/Navbar/Navbar";
+
+
+
+
+
 
 const Public = () => {
   return (
     <>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/rice-details" >
-            <RiceDetails />
-          </Route>
-          <Route path="/bread-details" >
-            <BreadDetails />
-          </Route>
-          <Route path="/user-login" exact>
-            <Login />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+    <Header />
+    <Navbar />
+     <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/rice-details" element={<RiceDetails />} />
+      <Route path="/bread-details" element={<BreadDetails />} />
+      <Route path="/noodles-details" element={<NoodlesDetails />} />
+      <Route path="/soft-drinks" element={<SoftDrinks />} />
+      <Route path="/coffee" element={<Coffee />} />
+
+      
+     </Routes>
     </>
   );
 };

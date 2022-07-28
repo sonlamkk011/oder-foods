@@ -8,8 +8,8 @@ import "./Home.scss";
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <Header />
+      {/* <Navbar />
+      <Header /> */}
       {/* <Drinks />
       <Card />
       <Foods /> */}
