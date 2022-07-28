@@ -1,5 +1,5 @@
 import "./Navbar.scss";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 
 const Navbar = () => {

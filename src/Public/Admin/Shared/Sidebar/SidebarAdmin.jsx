@@ -1,5 +1,6 @@
-import Link from "@mui/material/Link";
 import "./Sidebar.scss";
+import { Link } from "react-router-dom";
+
 
 const SidebarAdmin = () => {
   return (
@@ -9,22 +10,22 @@ const SidebarAdmin = () => {
           <nav className="sidebar sidebar-offcanvas" id="sidebar">
             <ul className="nav">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/admin">
                   <i className="icon-grid menu-icon" />
                   <span className="menu-title">Home</span>
-                </a>
+                </Link>
               </li>
             
              
              
               <li className="nav-item">
-                <a
+                <Link to="/admin-create-foods"
                   className="nav-link"
-                  href="create-foods"
+                  
                 >
                   <i className="icon-paper menu-icon" />
                   <span className="menu-title">Create Foods</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

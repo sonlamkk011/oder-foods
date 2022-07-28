@@ -11,7 +11,7 @@ const HeaderAdmin = () => {
                 Oder
                 <FastfoodIcon /> Food
               </a>
-              <a className="navbar-brand brand-logo-mini" href="/">
+              <a className="navbar-brand brand-logo-mini" href="/admin">
                 <img src="Assets/images/logo-mini.svg" alt="logo" />
               </a>
             </div>
