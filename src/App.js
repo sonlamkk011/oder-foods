@@ -1,19 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Public from './Public/Public';
-import Header from './Public/Module/Shared/Header/Header';
-import Navbar from './Public/Module/Shared/Navbar/Navbar';
-import SoftDrinks from './Public/Module/Drinks/SoftDrinks/SoftDrinks';
+import logo from "./logo.svg";
+import "./App.css";
+
+import Admin from "./Public/Admin/Admin";
+import Public from "./Public/Public";
+import Home from "./Public/Module/Home/Home";
 
 function App() {
   return (
-   <>
-   <Header />
-   {/* <Public /> */}
-{/* <SoftDrinks /> */}
-   {/* <Navbar /> */}
-   </>
-  )
+    <>
+      <Public />
+      <Admin />
+    </>
+  );
 }
 
 export default App;

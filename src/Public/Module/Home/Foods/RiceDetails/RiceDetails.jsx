@@ -1,4 +1,3 @@
-import "./Coffee.scss";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
@@ -7,8 +6,11 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import "./RiceDetails.scss";
+import Navbar from "../../../Shared/Navbar/Navbar";
+import Header from "../../../Shared/Header/Header"; 
 
-const Coffee = () => {
+const RiceDetails = () => {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -28,9 +30,12 @@ const Coffee = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
   return (
     <>
-      <div id="coffee">
+      <Header />
+      <Navbar />
+      <div id="rice-details">
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
@@ -102,4 +107,4 @@ const Coffee = () => {
     </>
   );
 };
-export default Coffee;
+export default RiceDetails;

@@ -1,43 +1,28 @@
-import RiceDetails from "./Module/Foods/RiceDetails/RiceDetails";
-import Header from "./Module/Shared/Header/Header";
-import Navbar from "./Module/Shared/Navbar/Navbar";
 import { BrowserRouter, Switch, Route, Router } from "react-router-dom";
-import BreadDetails from "./Module/Foods/BreadDetails/BreadDetails";
-import NoodlesDetails from "./Module/Foods/NoodlesDetails/NoodlesDetails";
-import Coffee from "./Module/Drinks/Coffee/Coffee";
-import SoftDrinks from "./Module/Drinks/SoftDrinks/SoftDrinks";
+import Login from "./Module/Auth/Login/Login";
+import BreadDetails from "./Module/Home/Foods/BreadDetails/BreadDetails";
+import RiceDetails from "./Module/Home/Foods/RiceDetails/RiceDetails";
 import Home from "./Module/Home/Home";
 
 const Public = () => {
   return (
     <>
-      <div id="public">
-        <div className="container">
-          <BrowserRouter>
-            <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="/rice-details" exact>
-                <RiceDetails />
-              </Route>
-              <Route path="/bread-details" exact>
-                <BreadDetails />
-              </Route>
-              <Route path="/noodles-details" exact>
-                <NoodlesDetails />
-              </Route>
-              <Route path="/soft-drinks" exact>
-                <SoftDrinks />
-              </Route>
-
-              <Route path="/coffee" exact>
-                <Coffee />
-              </Route>
-            </Switch>
-          </BrowserRouter>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/rice-details" >
+            <RiceDetails />
+          </Route>
+          <Route path="/bread-details" >
+            <BreadDetails />
+          </Route>
+          <Route path="/user-login" exact>
+            <Login />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </>
   );
 };

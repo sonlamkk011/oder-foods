@@ -1,4 +1,4 @@
-import "./SoftDrinks.scss";
+import "./Coffee.scss";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
@@ -7,8 +7,10 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import Header from "../../../Shared/Header/Header";
+import Navbar from "../../../Shared/Navbar/Navbar";
 
-const SoftDrinks = () => {
+const Coffee = () => {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -30,7 +32,7 @@ const SoftDrinks = () => {
   };
   return (
     <>
-      <div id="soft-drinks">
+      <div id="coffee">
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
@@ -102,4 +104,4 @@ const SoftDrinks = () => {
     </>
   );
 };
-export default SoftDrinks;
+export default Coffee;

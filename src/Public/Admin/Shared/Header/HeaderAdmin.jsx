@@ -1,21 +1,15 @@
-import Public from "../../../Public";
-import RiceDetails from "../../Home/Foods/RiceDetails/RiceDetails";
-import Navbar from "../Navbar/Navbar";
-import FastfoodIcon from '@mui/icons-material/Fastfood';
+import FastfoodIcon from "@mui/icons-material/Fastfood";
 
-import "./Header.scss";
-import Home from "../../Home/Home";
-
-const Header = () => {
+const HeaderAdmin = () => {
   return (
     <>
       <div id="header">
         <div className="container-scroller">
           <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-              <a className="navbar-brand brand-logo mr-5" href="/">
-              Oder<FastfoodIcon /> Food
-
+              <a className="navbar-brand brand-logo mr-5" href="/admin">
+                Oder
+                <FastfoodIcon /> Food
               </a>
               <a className="navbar-brand brand-logo-mini" href="/">
                 <img src="Assets/images/logo-mini.svg" alt="logo" />
@@ -146,11 +140,9 @@ const Header = () => {
               </ul>
             </div>
           </nav>
-          {/* <Navbar /> */}
-          {/* <Home /> */}
         </div>
       </div>
     </>
   );
 };
-export default Header;
+export default HeaderAdmin;
