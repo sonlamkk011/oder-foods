@@ -10,7 +10,7 @@ const SidebarAdmin = () => {
           <nav className="sidebar sidebar-offcanvas" id="sidebar">
             <ul className="nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/admin">
+                <Link to="/admin" className="nav-link" >
                   <i className="icon-grid menu-icon" />
                   <span className="menu-title">Home</span>
                 </Link>
@@ -19,7 +19,7 @@ const SidebarAdmin = () => {
              
              
               <li className="nav-item">
-                <Link to="/admin/create-foods"
+                <Link to="/admin-create-foods"
                   className="nav-link"
                   
                 >

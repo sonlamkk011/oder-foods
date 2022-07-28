@@ -10,9 +10,10 @@ const Admin = () => {
     <>
     <HeaderAdmin />
     <SidebarAdmin />
-    <Routes>
-      <Route path="/admin/create-foods" element={<CreateFoods />} />
-    </Routes>
+    <CreateFoods />
+    {/* <Routes>
+      <Route path="/admin-create-foods" element={<CreateFoods />} />
+    </Routes> */}
      
     </>
   );
