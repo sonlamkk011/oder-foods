@@ -1,6 +1,5 @@
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Link,  } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -101,6 +100,7 @@ const Navbar = () => {
                   </ul>
                 </div>
               </li>
+  
 
               <li className="nav-item">
                 <a
@@ -111,9 +111,14 @@ const Navbar = () => {
                   <span className="menu-title">Documentation</span>
                 </a>
               </li>
+
+              <li>
+           
+              </li>
             </ul>
           </nav>
         </div>
+       
       </div>
     </>
   );

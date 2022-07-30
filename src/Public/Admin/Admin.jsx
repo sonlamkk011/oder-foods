@@ -1,4 +1,4 @@
-import {  Route, Routes } from "react-router-dom";
+import {  Outlet, Route, Routes } from "react-router-dom";
 import CreateFoods from "./CreateFoods/CreateFoods";
 import Dasboard from "./Dasboard/Dasboard";
 import HeaderAdmin from "./Shared/Header/HeaderAdmin";
@@ -10,7 +10,7 @@ const Admin = () => {
     <>
     <HeaderAdmin />
     <SidebarAdmin />
-    <CreateFoods />
+    <Outlet />
     {/* <Routes>
       <Route path="/admin-create-foods" element={<CreateFoods />} />
     </Routes> */}

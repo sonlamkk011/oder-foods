@@ -8,11 +8,15 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import "./RiceDetails.scss";
 import Navbar from "../../../Shared/Navbar/Navbar";
-import Header from "../../../Shared/Header/Header"; 
+import Header from "../../../Shared/Header/Header";
+import axios from "axios";
+import publicService from "../../../Service/PublicService";
+import { useEffect } from "react";
 
 const RiceDetails = () => {
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
+  const [lists, setLists] = useState([]);
 
   const handleIncrease = () => {
     setCount(count + 1);
@@ -31,31 +35,27 @@ const RiceDetails = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    fetch("https://order-foods.herokuapp.com/api/v1/foods/list")
+      .then((res) => res.json())
+      .then((lists) => {
+        setLists(lists.Pageable.content);
+      });
+  }, []);
+
   return (
     <>
-      {/* <Header />
-      <Navbar /> */}
       <div id="rice-details">
         <div className="container">
           <div className="row">
             <div className="col-sm-3">
               <div className="item-food">
-                <img
-                  src="https://d1sag4ddilekf6.azureedge.net/compressed/merchants/5-CYNKKEXBDB5ERX/hero/fee3d8721f234ac5bbb1eebec7bee76b_1631597965526896988.png"
-                  loading="lazy"
-                  style={{
-                    borderBottomLeftRadius: 10,
-                    borderBottomRightRadius: 10,
-                    borderTopLeftRadius: 10,
-                    borderTopRightRadius: 10,
-                    marginTop: 10,
-                    display: "block",
-                    width: 300,
-                    height: 160,
-                  }}
-                />
+                {lists.map(list => (
+                  <div>
+                    {list.name}
+                    </div>
 
-                <h1 className="name-item">Cơm Tấm Sườn Nướng</h1>
+                ))}
                 <div>
                   <Button
                     className="icon"
