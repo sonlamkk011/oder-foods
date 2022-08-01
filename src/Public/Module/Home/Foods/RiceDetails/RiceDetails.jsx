@@ -12,9 +12,8 @@ import {
   CardSubtitle,
   Button,
 } from "reactstrap";
-import { Typography } from "@mui/material";
+
 import LinearProgress from "@mui/material/LinearProgress";
-import TextField from "@mui/material/TextField";
 
 import { CartContext } from "../../../Contexts/Cart";
 import "./RiceDetails.scss";
@@ -59,9 +58,10 @@ class RiceDetails extends Component {
                       <CardText>{product.description}</CardText>
                       <CartContext.Consumer>
                     {({ addToCart }) => (
-                      <Button onClick={() => addToCart(product)}>
+                      <Button onClick={() => addToCart(product)}  >
                         Add to cart
                       </Button>
+                      
                     )}
                   </CartContext.Consumer>
                     </CardBody>

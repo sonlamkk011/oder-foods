@@ -29,7 +29,7 @@ const Navbar = () => {
                   aria-controls="ui-basic"
                 >
                   <i className="icon-layout menu-icon" />
-                  <span className="menu-title">Đồ Ăn</span>
+                  <span className="menu-title">Foods</span>
                   <i className="menu-arrow" />
                 </a>
                 <div className="collapse" id="ui-basic">
@@ -37,21 +37,11 @@ const Navbar = () => {
                     <li className="nav-item">
                       {" "}
                       <Link to="/rice-details" className="nav-link">
-                        Cơm
+                        Đồ Ăn
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      {" "}
-                      <Link to="/bread-details" className="nav-link">
-                        Bánh Mì
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      {" "}
-                      <Link className="nav-link" to="/noodles-details">
-                        Bún Phở
-                      </Link>
-                    </li>
+                    
+                   
                   </ul>
                 </div>
               </li>
