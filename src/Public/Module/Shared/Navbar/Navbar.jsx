@@ -1,12 +1,18 @@
+import { Link } from "react-router-dom";
+import { CartContext } from "../../Contexts/Cart";
+
 import "./Navbar.scss";
-import { Link,  } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
       <div id="navbar">
-        <div className="container-scroller">
-          <nav className="sidebar sidebar-offcanvas" id="sidebar">
+        <div className="container-scroller me-5">
+          <nav
+            className="sidebar sidebar-offcanvas"
+            id="sidebar"
+            style={{ marginTop: 35, backgroundColor: "seashell" }}
+          >
             <ul className="nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">
@@ -30,18 +36,18 @@ const Navbar = () => {
                   <ul className="nav flex-column sub-menu">
                     <li className="nav-item">
                       {" "}
-                      <Link to="/rice-details" className="nav-link" >
+                      <Link to="/rice-details" className="nav-link">
                         Cơm
                       </Link>
                     </li>
                     <li className="nav-item">
                       {" "}
-                      <Link to="/bread-details" className="nav-link" >
+                      <Link to="/bread-details" className="nav-link">
                         Bánh Mì
                       </Link>
                     </li>
                     <li className="nav-item">
-                      {" "} 
+                      {" "}
                       <Link className="nav-link" to="/noodles-details">
                         Bún Phở
                       </Link>
@@ -76,7 +82,7 @@ const Navbar = () => {
                   </ul>
                 </div>
               </li>
-             
+
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -93,32 +99,29 @@ const Navbar = () => {
                   <ul className="nav flex-column sub-menu">
                     <li className="nav-item">
                       {" "}
-                      <Link className="nav-link" to="/view">
-                        Cart(0)
-                      </Link>
+                      <CartContext.Consumer>
+                    { ({cartItems}) => (
+
+                  <Link className="nav-link" to="/view-cart">Cart({cartItems.length})</Link>
+                    ) }
+
+                  </CartContext.Consumer>
                     </li>
                   </ul>
                 </div>
               </li>
-  
 
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href="pages/documentation/documentation.html"
-                >
+                <a className="nav-link" href="/">
                   <i className="icon-paper menu-icon" />
                   <span className="menu-title">Documentation</span>
                 </a>
               </li>
 
-              <li>
-           
-              </li>
+              <li></li>
             </ul>
           </nav>
         </div>
-       
       </div>
     </>
   );

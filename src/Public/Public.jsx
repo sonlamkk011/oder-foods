@@ -7,13 +7,16 @@ import RiceDetails from "./Module/Home/Foods/RiceDetails/RiceDetails";
 import Home from "./Module/Home/Home";
 import Header from "./Module/Shared/Header/Header";
 import Navbar from "./Module/Shared/Navbar/Navbar";
-
+import "./Public.scss";
 const Public = () => {
   return (
     <>
-      {/* <Header /> */}
-      {/* <Navbar /> */}
+    <div id="public">
+    <Header />
+      <Navbar />
       <Outlet/>
+    </div>
+    
       {/* <BreadDetails /> */}
         {/* <Route path="home" element={<Home />} /> */}
         {/* <Route path="rice-details" element={<RiceDetails />} />

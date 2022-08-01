@@ -2,10 +2,12 @@ import Public from "../../../Public";
 import RiceDetails from "../../Home/Foods/RiceDetails/RiceDetails";
 import Navbar from "../Navbar/Navbar";
 import FastfoodIcon from '@mui/icons-material/Fastfood';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Link } from "react-router-dom";
+
 
 import "./Header.scss";
-import Home from "../../Home/Home";
-
+import { CartContext } from "../../Contexts/Cart";
 const Header = () => {
   return (
     <>
@@ -32,14 +34,7 @@ const Header = () => {
               <ul className="navbar-nav mr-lg-2">
                 <li className="nav-item nav-search d-none d-lg-block">
                   <div className="input-group">
-                    <div
-                      className="input-group-prepend hover-cursor"
-                      id="navbar-search-icon"
-                    >
-                      <span className="input-group-text" id="search">
-                        <i className="icon-search" />
-                      </span>
-                    </div>
+                   
                     <input
                       type="text"
                       className="form-control"
@@ -52,6 +47,15 @@ const Header = () => {
                 </li>
               </ul>
               <ul className="navbar-nav navbar-nav-right">
+                <div className="cart">
+                  <CartContext.Consumer>
+                    { ({cartItems}) => (
+
+                  <Link to="/cart"><ShoppingCartIcon />({cartItems.length})</Link>
+                    ) }
+
+                  </CartContext.Consumer>
+                </div>
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link count-indicator dropdown-toggle"
