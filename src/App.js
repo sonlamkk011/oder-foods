@@ -14,8 +14,8 @@ import CreateFoods from "./Public/Admin/CreateFoods/CreateFoods";
 import TestApi from "./Public/Module/Home/Foods/TestApi/TestApi";
 
 import { CartProvider } from "./Public/Module/Contexts/Cart";
-import ViewCart from "./Public/Module/Home/ViewCart/ViewCart";
 import { useState } from "react";
+import ViewCart from "./Public/Module/Home/Drinks/ViewCart/ViewCart";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -38,7 +38,7 @@ function App() {
           <Route path="/" element={<Public />}>
             <Route path="home" element={<Home />} />
             <Route path="rice-details" element={<RiceDetails onAdd={onAdd} />} />
-            <Route path="view-cart" element={<ViewCart onAdd={onAdd} cartItems={cartItems} />} />
+            <Route path="view-cart" element={<ViewCart />} />
             <Route path="soft-drinks" element={<SoftDrinks />} />
             <Route path="coffee" element={<Coffee />} />
           </Route>

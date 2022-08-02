@@ -20,6 +20,13 @@ import { CartContext } from "../../../Contexts/Cart";
 
 const SoftDrinks = () => {
   const [lists, setLists] = useState([]);
+  const [cart, setCart] = useState([])
+
+  const handleClick = (list) => {
+    cart.push(list);
+    console.log(cart);
+
+  }
 
   useEffect(() => {
     fetch("https://order-foods.herokuapp.com/api/v1/foods/list")
@@ -46,13 +53,9 @@ const SoftDrinks = () => {
                   <CardBody>
                     <CardTitle>{list.name} </CardTitle>
                     <CardTitle> {list.price} VND </CardTitle>
-                    <CartContext.Consumer>
-                      {({ addToCart }) => (
-                        <Button onClick={() => addToCart(list)}>
-                          Add to cart
-                        </Button>
-                      )}
-                    </CartContext.Consumer>
+                    <Button onClick={() =>handleClick(list) }>
+                      ADD
+                    </Button>
                   </CardBody>
                 </Card>
               </Col>
