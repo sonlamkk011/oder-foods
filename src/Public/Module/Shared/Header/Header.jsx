@@ -1,10 +1,9 @@
 import Public from "../../../Public";
 import RiceDetails from "../../Home/Foods/RiceDetails/RiceDetails";
 import Navbar from "../Navbar/Navbar";
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FastfoodIcon from "@mui/icons-material/Fastfood";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
-
 
 import "./Header.scss";
 import { CartContext } from "../../Contexts/Cart";
@@ -16,8 +15,8 @@ const Header = () => {
           <nav className="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
               <a className="navbar-brand brand-logo mr-5" href="/">
-              Oder<FastfoodIcon /> Food
-
+                Oder
+                <FastfoodIcon /> Food
               </a>
               <a className="navbar-brand brand-logo-mini" href="/">
                 <img src="Assets/images/logo-mini.svg" alt="logo" />
@@ -34,7 +33,6 @@ const Header = () => {
               <ul className="navbar-nav mr-lg-2">
                 <li className="nav-item nav-search d-none d-lg-block">
                   <div className="input-group">
-                   
                     <input
                       type="text"
                       className="form-control"
@@ -49,11 +47,11 @@ const Header = () => {
               <ul className="navbar-nav navbar-nav-right">
                 <div className="cart">
                   <CartContext.Consumer>
-                    { ({cartItems}) => (
-
-                  <Link to="/cart"><ShoppingCartIcon />({cartItems.length})</Link>
-                    ) }
-
+                    {({ cartItems }) => (
+                      <Link to="/view-cart">
+                        <ShoppingCartIcon />({cartItems.length})
+                      </Link>
+                    )}
                   </CartContext.Consumer>
                 </div>
                 <li className="nav-item dropdown">

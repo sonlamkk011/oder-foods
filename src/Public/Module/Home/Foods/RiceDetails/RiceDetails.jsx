@@ -11,13 +11,16 @@ import {
   CardTitle,
   CardSubtitle,
   Button,
+  Alert,
 } from "reactstrap";
 
 import LinearProgress from "@mui/material/LinearProgress";
+import Stack from '@mui/material/Stack';
 
 import { CartContext } from "../../../Contexts/Cart";
 import "./RiceDetails.scss";
 import Search from "../Search/Search";
+
 
 class RiceDetails extends Component {
   constructor(props) {
@@ -26,7 +29,11 @@ class RiceDetails extends Component {
     this.state = {
       products: [],
       count: 0,
+      openAlest: false,
     };
+  }
+  handleOpen = () => {
+
   }
 
   componentDidMount() {
@@ -38,7 +45,7 @@ class RiceDetails extends Component {
   }
 
   render() {
-    const { products, count } = this.state;
+    const { products, count, openAlest } = this.state;
     return (
       <>
         <div id="rice-details">
@@ -57,13 +64,13 @@ class RiceDetails extends Component {
                       <CardTitle>{product.name}</CardTitle>
                       <CardText>{product.description}</CardText>
                       <CartContext.Consumer>
-                    {({ addToCart }) => (
-                      <Button onClick={() => addToCart(product)}  >
-                        Add to cart
-                      </Button>
-                      
-                    )}
-                  </CartContext.Consumer>
+                        {({ addToCart }) => (
+                          <Button onClick={() => addToCart(product)}>
+                            Add to cart
+                          </Button>
+                        )}
+                        
+                      </CartContext.Consumer>
                     </CardBody>
                   </Card>
                 </Col>
@@ -71,6 +78,7 @@ class RiceDetails extends Component {
             </Row>
           </Container>
         </div>
+      
       </>
     );
   }

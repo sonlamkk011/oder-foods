@@ -15,20 +15,32 @@ import TestApi from "./Public/Module/Home/Foods/TestApi/TestApi";
 
 import { CartProvider } from "./Public/Module/Contexts/Cart";
 import ViewCart from "./Public/Module/Home/ViewCart/ViewCart";
+import { useState } from "react";
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+  const onAdd = (products) => {
+    const exist = cartItems.find((x) => x.name === products.name);
+    if (exist) {
+      setCartItems(
+        cartItems.map((x) =>
+          x.name === products.name ? { ...exist, qty: exist.qty + 1 } : x
+        )
+      );
+    }else{
+      setCartItems([...cartItems, {...products, qty:1}]);
+    }
+  };
   return (
     <BrowserRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<Public />}>
             <Route path="home" element={<Home />} />
-            <Route path="rice-details" element={<RiceDetails />} />
-            <Route path="bread-details" element={<BreadDetails />} />
-            <Route path="noodles-details" element={<NoodlesDetails />} />
+            <Route path="rice-details" element={<RiceDetails onAdd={onAdd} />} />
+            <Route path="view-cart" element={<ViewCart onAdd={onAdd} cartItems={cartItems} />} />
             <Route path="soft-drinks" element={<SoftDrinks />} />
             <Route path="coffee" element={<Coffee />} />
-            <Route path="view-cart" element={<ViewCart />} />
           </Route>
         </Routes>
       </CartProvider>
