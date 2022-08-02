@@ -19,7 +19,7 @@ const Search = () => {
       }}
     >
       <PersonSearchIcon className='item-icon'/>
-      <TextField fullWidth label="Tìm kiếm món ăn ..." className='search-icon' />
+      <TextField fullWidth label="Tìm kiếm ..." className='search-icon' />
     </Box>
      </div>
         </>
