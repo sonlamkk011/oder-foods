@@ -14,32 +14,38 @@ import CreateFoods from "./Public/Admin/CreateFoods/CreateFoods";
 import TestApi from "./Public/Module/Home/Foods/TestApi/TestApi";
 
 import { CartProvider } from "./Public/Module/Contexts/Cart";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ViewCart from "./Public/Module/Home/Drinks/ViewCart/ViewCart";
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const onAdd = (products) => {
-    const exist = cartItems.find((x) => x.name === products.name);
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.name === products.name ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    }else{
-      setCartItems([...cartItems, {...products, qty:1}]);
-    }
+  const [cart, setCart] = useState([])
+
+  const handleClick = (list) => {
+   if(cart.indexOf(list) !== -1) return;
+   setCart([...cart, list]);
+  }  
+
+  const handleChange = (list, d) => {
+    const ind = cart.indexOf(list);
+    const arr = cart; 
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
+
   };
+  // useEffect(() => {
+  //   console.log("cartttttt");
+  // },[cart]);
   return (
     <BrowserRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<Public />}>
             <Route path="home" element={<Home />} />
-            <Route path="rice-details" element={<RiceDetails onAdd={onAdd} />} />
-            <Route path="view-cart" element={<ViewCart />} />
-            <Route path="soft-drinks" element={<SoftDrinks />} />
+            <Route path="rice-details" element={<RiceDetails />} />
+            <Route path="view-cart" element={<ViewCart cart={cart} setCart={setCart} />} />
+            <Route path="soft-drinks" element={<SoftDrinks handleClick={handleClick} />} />
             <Route path="coffee" element={<Coffee />} />
           </Route>
         </Routes>

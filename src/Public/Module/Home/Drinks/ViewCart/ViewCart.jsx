@@ -1,6 +1,24 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import "./ViewCart.scss";
 
-const ViewCart = () => {
+const ViewCart = ({ cart, setCart, handleChange }) => {
+    const [price, setPrice] = useState(0);
+
+
+    const handleRemove = (id) => {
+        const arr = cart.filter((list) => list.id !== id);
+        setCart(arr);
+        handlePrice();
+    }
+    const handlePrice = () => {
+        let ans = 0;
+        cart.map((list) => (ans += list.amount * list.price));
+        setPrice(ans);
+    };
+    useEffect(() => {
+        handlePrice();
+    })
     
     return(
         <>
@@ -8,6 +26,11 @@ const ViewCart = () => {
             <div className="container">
             <div className="foods">
             <h1 className="title">View Cart</h1>
+            {cart.map((list) => (
+                <div className="cart-box" key={list.id}>
+                    
+                    </div>
+            ))}
           </div>
             </div>
         </div>

@@ -18,15 +18,9 @@ import Search from "../../Foods/Search/Search";
 import { CartContext } from "../../../Contexts/Cart";
 
 
-const SoftDrinks = () => {
+const SoftDrinks = ({handleClick}) => {
   const [lists, setLists] = useState([]);
-  const [cart, setCart] = useState([])
-
-  const handleClick = (list) => {
-    cart.push(list);
-    console.log(cart);
-
-  }
+ 
 
   useEffect(() => {
     fetch("https://order-foods.herokuapp.com/api/v1/foods/list")
