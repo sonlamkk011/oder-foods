@@ -40,8 +40,8 @@ const Navbar = () => {
                         Đồ Ăn
                       </Link>
                     </li>
-                    
-                   
+
+
                   </ul>
                 </div>
               </li>
@@ -64,47 +64,10 @@ const Navbar = () => {
                         Nước Ngọt
                       </Link>
                     </li>
-                  
+
                   </ul>
                 </div>
               </li>
-
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  data-toggle="collapse"
-                  href="#tables"
-                  aria-expanded="false"
-                  aria-controls="tables"
-                >
-                  <i className="icon-grid-2 menu-icon" />
-                  <span className="menu-title">Giỏ Hàng</span>
-                  <i className="menu-arrow" />
-                </a>
-                <div className="collapse" id="tables">
-                  <ul className="nav flex-column sub-menu">
-                    <li className="nav-item">
-                      {" "}
-                      <CartContext.Consumer>
-                    { ({cartItems}) => (
-
-                  <Link className="nav-link" to="/view-cart">Cart({cartItems.length})</Link>
-                    ) }
-
-                  </CartContext.Consumer>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  <i className="icon-paper menu-icon" />
-                  <span className="menu-title">Documentation</span>
-                </a>
-              </li>
-
-              <li></li>
             </ul>
           </nav>
         </div>

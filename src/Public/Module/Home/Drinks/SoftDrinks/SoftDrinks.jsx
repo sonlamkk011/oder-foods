@@ -17,6 +17,10 @@ import { useEffect } from "react";
 import Search from "../../Foods/Search/Search";
 import { CartContext } from "../../../Contexts/Cart";
 
+
+
+
+
 const SoftDrinks = ({ handleClick }) => {
   const [lists, setLists] = useState([]);
 
@@ -32,57 +36,33 @@ const SoftDrinks = ({ handleClick }) => {
     <>
       <div id="soft-drinks">
         <Container>
-          <div className="foods">
-            <h1 className="title">Drinks</h1>
-          </div>
           <Search />
           <Row>
             {lists.map((list) => (
-              <Col sm="3" key={list.id}>
+              <Col md="4" key={list.id} className="hover-css" >
                 <Card className="cart">
-                  <CardImg width="100%" height="200" src={list.image} />
-                  {list.status}
-                  <CardBody>
-                    <CardTitle>{list.name} </CardTitle>
-                    <CardTitle> {list.price} VND </CardTitle>
+                  <CardImg style={{ width: 130, height: 120, margin: 20 }} src={list.image} />
+                  <div>
+                    <div style={{ marginTop: - 140, marginLeft: 180, fontSize: 20 }}>{list.name} </div>
+                    <div style={{ backgroundColor: "#00b14f", width: 55, marginLeft: 10, marginTop: -35, textAlign: "center", color: "whitesmoke" }}>
+                      {list.status}
+                    </div>
+                    <div style={{ marginLeft: 180, marginTop: 30, fontSize: 20 }} > {list.price} VND </div>
                     <CartContext.Consumer>
                       {({ addToCart }) => (
-                        <Button
-                          onClick={() => {
-                            handleClick(list);
-                            addToCart(list);
-                          }}
-                        >
-                          Add to cart
-                        </Button>
+                        <button className="button-add" style={{ width: 100, marginLeft: 230, marginTop: 25 }} onClick={() => {
+                          handleClick(list);
+                          addToCart(list);
+                        }}>
+                          Add to card
+                        </button>
                       )}
                     </CartContext.Consumer>
-                    {/* <Button onClick={() =>handleClick(list) }>
-                      ADD TO CARD
-                    </Button> */}
-                  </CardBody>
+                  </div>
                 </Card>
               </Col>
             ))}
-            {/* {lists.map((product) => (
-                <Col sm="3">
-                  <Card className="cart">
-                    <CardImg  width="100%" height="200" src={product.image} />
-                    <CardBody>
-                      <CardTitle>{product.name}</CardTitle>
-                      <CardText>{product.description}</CardText>
-                      <CartContext.Consumer>
-                        {({ addToCart }) => (
-                          <Button onClick={() => addToCart(product)}>
-                            Add to cart
-                          </Button>
-                        )}
-                        
-                      </CartContext.Consumer>
-                    </CardBody>
-                  </Card>
-                </Col>
-              ))} */}
+           
           </Row>
         </Container>
       </div>

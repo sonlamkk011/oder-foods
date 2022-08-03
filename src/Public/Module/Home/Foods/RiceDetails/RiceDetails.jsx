@@ -25,7 +25,6 @@ import Search from "../Search/Search";
 class RiceDetails extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       products: [],
       count: 0,
@@ -69,7 +68,7 @@ class RiceDetails extends Component {
                             Add to cart
                           </Button>
                         )}
-                        
+
                       </CartContext.Consumer>
                     </CardBody>
                   </Card>
@@ -78,7 +77,7 @@ class RiceDetails extends Component {
             </Row>
           </Container>
         </div>
-      
+
       </>
     );
   }
