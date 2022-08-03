@@ -52,7 +52,7 @@ export class Register extends Form {
           let { message } = this.state;
           message.isDisplay = true;
           message.type = "error";
-          message.content = err.response.data.Message;
+          message.content = "Vui lòng kiểm tra lại thông tin đăng ký";
           this.setState({
             message
           });
@@ -66,19 +66,20 @@ export class Register extends Form {
       <>
         <div id="register">
           <div className="container-scroll">
-            {
-              message.isDisplay ? (<Stack sx={{ width: '100%' }} spacing={2}>
-                <Alert severity={message.type}> {message.content}
-                </Alert>
-              </Stack>
-              ) : (
-                ""
-              )}
+
             <div className="container-fluid page-body-wrapper full-page-wrapper">
               <div className="content-wrapper d-flex align-items-center auth px-0">
                 <div className="row w-100 mx-0">
                   <div className="col-lg-4 mx-auto">
                     <div className="auth-form-light text-left py-5 px-4 px-sm-5">
+                      {
+                        message.isDisplay ? (<Stack sx={{ width: '100%' }} spacing={2}>
+                          <Alert severity={message.type}> {message.content}
+                          </Alert>
+                        </Stack>
+                        ) : (
+                          ""
+                        )}
                       <div className="brand-logo">
                         Oder<FastfoodIcon /> Food
 

@@ -65,15 +65,16 @@ export class Login extends Form {
               <div className="content-wrapper d-flex align-items-center auth px-0">
                 <div className="row w-100 mx-0">
                   <div className="col-lg-4 mx-auto">
+                    {
+                      message.isDisplay ? (<Stack sx={{ width: '100%' }} spacing={2}>
+                        <Alert severity={message.type}> {message.content}
+                        </Alert>
+                      </Stack>
+                      ) : (
+                        ""
+                      )}
                     <div className="auth-form-light text-left py-5 px-4 px-sm-5">
-                      {
-                        message.isDisplay ? (<Stack sx={{ width: '100%' }} spacing={2}>
-                          <Alert severity={message.type}> {message.content}
-                          </Alert>
-                        </Stack>
-                        ) : (
-                          ""
-                        )}
+
                       <div className="brand-logo">
                         Oder<FastfoodIcon /> Food
 
