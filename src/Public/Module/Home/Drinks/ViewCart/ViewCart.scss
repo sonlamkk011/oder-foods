@@ -10,12 +10,24 @@
             padding-left: 15px;
             cursor: pointer;
             border-radius: 1rem;
-      .title {
-        margin-left: 1rem;
-        font-size: 22px;
-        margin-left: 30rem;
-  
-  
+
+            .title {
+              margin-left: 1rem;
+              font-size: 22px;
+              margin-left: 30rem;
+      
+      
+          }
     }
-  }
+    .name{
+      margin-top: 40px;
+      font-size: 20px;
+    }
+    .button{
+      margin-top: 10px;
+      float: right;
+      background-color: skyblue;
+      font-size: 5px;
+    }
+
 }
