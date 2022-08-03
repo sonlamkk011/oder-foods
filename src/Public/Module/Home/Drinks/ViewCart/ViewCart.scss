@@ -25,9 +25,36 @@
     }
     .button{
       margin-top: 10px;
-      float: right;
-      background-color: skyblue;
-      font-size: 5px;
+      padding: 5px 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: skyblue;
+    border-radius: 5px;
+    cursor: pointer;
+
+      .oder{
+        padding: 5px 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: skyblue;
+    border-radius: 5px;
+    cursor: pointer;
+
+   
+      }
+      
+
+      }
+      .css-bdhsul-MuiTypography-root-MuiDialogTitle-root{
+        width: 600px;
+
     }
+    
 
 }
