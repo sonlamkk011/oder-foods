@@ -42,13 +42,13 @@ const SoftDrinks = ({handleClick}) => {
             {lists.map((list) => (
               <Col sm="3" key={list.id}>
                 <Card className="cart">
-                  <CardImg top width="100%" src={list.image} />
+                  <CardImg  width="100%" height="200" src={list.image} />
                   {list.status}
                   <CardBody>
                     <CardTitle>{list.name} </CardTitle>
                     <CardTitle> {list.price} VND </CardTitle>
                     <Button onClick={() =>handleClick(list) }>
-                      ADD
+                      ADD TO CARD
                     </Button>
                   </CardBody>
                 </Card>
