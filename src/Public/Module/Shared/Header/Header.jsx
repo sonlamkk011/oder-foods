@@ -135,14 +135,14 @@ const Header = () => {
                       <i className="ti-settings text-primary" />
                       Settings
                     </a>
-                    <a className="dropdown-item" href="login">
+                    <Link className="dropdown-item" to="/account-login">
                       <i className="ti-power-off text-primary" />
                       Login
-                    </a>
-                    <a className="dropdown-item" href="login">
+                    </Link>
+                    <Link className="dropdown-item" to="/account-login">
                       <i className="ti-power-off text-primary" />
                       Logout
-                    </a>
+                    </Link>
                   </div>
                 </li>
               </ul>

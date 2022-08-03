@@ -16,18 +16,21 @@ import TestApi from "./Public/Module/Home/Foods/TestApi/TestApi";
 import { CartProvider } from "./Public/Module/Contexts/Cart";
 import { useEffect, useState } from "react";
 import ViewCart from "./Public/Module/Home/Drinks/ViewCart/ViewCart";
+import { Login } from "./Public/Module/Auth/Login/Login";
+import { Register } from "./Public/Module/Auth/Register/Register";
+import { PageError } from "./Public/Module/Shared/ErrorPage/PageError";
 
 function App() {
   const [cart, setCart] = useState([])
 
   const handleClick = (list) => {
-   if(cart.indexOf(list) !== -1) return;
-   setCart([...cart, list]);
-  }  
+    if (cart.indexOf(list) !== -1) return;
+    setCart([...cart, list]);
+  }
 
   const handleChange = (list, d) => {
     const ind = cart.indexOf(list);
-    const arr = cart; 
+    const arr = cart;
     arr[ind].amount += d;
 
     if (arr[ind].amount === 0) arr[ind].amount = 1;
@@ -50,6 +53,14 @@ function App() {
           </Route>
         </Routes>
       </CartProvider>
+
+      <Routes>
+        <Route path="/account-login" element={<Login />} />
+        <Route path="/account-register" element={<Register />} />
+
+      </Routes>
+
+
       <Routes>
         <Route path="/admin" element={<Admin />}>
           <Route path="admin-create-foods" element={<CreateFoods />} />
