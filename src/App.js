@@ -23,6 +23,7 @@ function App() {
   const handleClick = (list) => {
    if(cart.indexOf(list) !== -1) return;
    setCart([...cart, list]);
+ 
   }  
 
   const handleChange = (list, d) => {
