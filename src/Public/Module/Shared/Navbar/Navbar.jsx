@@ -64,11 +64,7 @@ const Navbar = () => {
                         Nước Ngọt
                       </Link>
                     </li>
-                    <li className="nav-item">
-                      <Link className="nav-link" to="/coffee">
-                        Pha Chế
-                      </Link>
-                    </li>
+                  
                   </ul>
                 </div>
               </li>
