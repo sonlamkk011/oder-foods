@@ -7,7 +7,7 @@ import { CartContext } from "../Contexts/Cart";
 
 import "./Alerts.scss";
 const Context = createContext({
-  name: "Thêm vào giỏ hàng thành công   ",
+  name: "Thêm vào giỏ hàng thành công",
 });
 
 const Alerts = () => {
@@ -31,6 +31,7 @@ const Alerts = () => {
   }, [cartItems]);
 
   return (
+    
     <>
       <div id="alerts">
       {contextHolder}

@@ -12,9 +12,9 @@ export class Register extends Form {
     super(props);
     this.state = {
       form: this._getInitFormData({
-        userName: "",
+        username: "",
         email: "",
-        phoneNumber: "",
+        phone: "",
         password: "",
       }),
 
@@ -31,12 +31,12 @@ export class Register extends Form {
   onRegister = async () => {
     this._validateForm();
     if (this._isFormValid()) {
-      const { userName, email, phoneNumber, password } = this.state.form;
+      const { username, email, phone, password } = this.state.form;
       const data = {
-        userName: userName.value,
-        Email: email.value,
-        PhoneNumber: phoneNumber.value,
-        Password: password.value,
+        username: username.value,
+        email: email.value,
+        phone: phone.value,
+        password: password.value,
       }
       await publicService.registerAccount(data)
         .then((res) => {
@@ -61,7 +61,7 @@ export class Register extends Form {
   }
   render() {
     const { message } = this.state
-    const { userName, password, email, phoneNumber } = this.state.form;
+    const { username, password, email, phone } = this.state.form;
     return (
       <>
         <div id="register">
@@ -96,11 +96,11 @@ export class Register extends Form {
                             id="exampleInputUsername1"
                             placeholder="Username"
                             required
-                            value={userName.value}
-                            onChange={(ev) => this._setValue(ev, "userName")}
+                            value={username.value}
+                            onChange={(ev) => this._setValue(ev, "username")}
                           />
                           {
-                            userName.err !== '' ? userName.err === "*" ? <ErrorForm message="User name cannot be empty" /> : '' : ""
+                            username.err !== '' ? username.err === "*" ? <ErrorForm message="User name cannot be empty" /> : '' : ""
                           }
                         </div>
                         <div className="form-group">
@@ -123,11 +123,11 @@ export class Register extends Form {
                             className="form-control form-control-lg"
                             placeholder="Phone Number"
                             required
-                            value={phoneNumber.value}
-                            onChange={(ev) => this._setValue(ev, "phoneNumber")}
+                            value={phone.value}
+                            onChange={(ev) => this._setValue(ev, "phone")}
                           />
                           {
-                            phoneNumber.err !== '' ? phoneNumber.err === "*" ? <ErrorForm message="Phone Number cannot be empty" /> : <ErrorForm message={phoneNumber.err} /> : ""
+                            phone.err !== '' ? phone.err === "*" ? <ErrorForm message="Phone Number cannot be empty" /> : <ErrorForm message={phone.err} /> : ""
                           }
                         </div>
 

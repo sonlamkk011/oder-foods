@@ -36,7 +36,6 @@ const SoftDrinks = ({ handleClick }) => {
     <>
       <div id="soft-drinks">
         <Container>
-          {/* <Search /> */}
           <Row>
             {lists.map((list) => (
               <Col md="4" key={list.id}>
@@ -61,6 +60,7 @@ const SoftDrinks = ({ handleClick }) => {
                   </div>
                 </Card>
               </Col>
+
             ))}
 
           </Row>

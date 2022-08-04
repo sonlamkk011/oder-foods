@@ -64,7 +64,6 @@ class Form extends Component {
 
     _getInvalidErr(domEl) {
         if (domEl.validity.valid) return '';
-        // if (domEl.type === 'username' && domEl.validity.typeMismatch) return ERR_MSG.USERNAME;
         if (domEl.type === 'email' && domEl.validity.typeMismatch) return ERR_MSG.EMAIL;
         if (domEl.validity.valueMissing) return ERR_MSG.REQUIRED;
         if (domEl.validity.rangeOverflow) return ERR_MSG.MAX + domEl.max;

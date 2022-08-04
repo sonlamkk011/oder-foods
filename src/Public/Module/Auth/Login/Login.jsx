@@ -34,7 +34,7 @@ export class Login extends Form {
       params.append("grant_type", "password");
       params.append("username", username.value);
       params.append("password", password.value);
-      await publicService.accessAuthToken(params)
+      await publicService.getAuthUser(params)
         .then((res) => {
           localStorage.setItem('access_token', res.data.access_token);
           window.location.replace('/account-register');
