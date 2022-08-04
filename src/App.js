@@ -19,40 +19,40 @@ import { PageError } from "./Public/Module/Shared/ErrorPage/PageError";
 function App() {
   const [cart, setCart] = useState([]);
   const [cartItem, setCartItem] = useState([])
-  
 
-  
+
+
 
   const handleClick = (item) => {
-   if(cart.indexOf(item) !== -1) return;
-   setCart([...cart, item]);
-  // const arr =[]
-  // arr.push(list);
-  // console.log(cart);
-  // setCart(arr)
-  }  
+    if (cart.indexOf(item) !== -1) return;
+    setCart([...cart, item]);
+    // const arr =[]
+    // arr.push(list);
+    // console.log(cart);
+    // setCart(arr)
+  }
 
-  
+
   // useEffect(() => {
   //   console.log("cartttttt");
   // },[cart]);
   return (
-    <BrowserRouter>0
+    <BrowserRouter>
       <CartProvider>
         <Routes>
           <Route path="/" element={<Public />}>
             <Route path="home" element={<Home />} />
             <Route path="rice-details" element={<RiceDetails />} />
-            <Route path="view-cart" element={<ViewCart cart={cart} setCart={setCart}  />} />
+            <Route path="view-cart" element={<ViewCart cart={cart} setCart={setCart} />} />
             <Route path="soft-drinks" element={<SoftDrinks handleClick={handleClick} />} />
           </Route>
         </Routes>
       </CartProvider>
 
       <Routes>
+        
         <Route path="/account-login" element={<Login />} />
         <Route path="/account-register" element={<Register />} />
-
       </Routes>
 
 

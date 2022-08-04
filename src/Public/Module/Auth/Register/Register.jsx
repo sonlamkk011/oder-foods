@@ -142,7 +142,7 @@ export class Register extends Form {
                             onChange={(ev) => this._setValue(ev, "password")}
                           />
                           {
-                            password.err !== '' ? password.err === "*" ? <ErrorForm message="Phone Number cannot be empty" /> : <ErrorForm message={password.err} /> : ""
+                            password.err !== '' ? password.err === "*" ? <ErrorForm message="Password cannot be empty" /> : <ErrorForm message={password.err} /> : ""
                           }
 
                         </div>

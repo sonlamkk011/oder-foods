@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import Search from "../../Foods/Search/Search";
 import "./ViewCart.scss";
 import { Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
@@ -8,8 +7,6 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Link, NavLink } from "react-router-dom";
-import { CartContext } from "../../../Contexts/Cart";
 
 
 

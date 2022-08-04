@@ -49,11 +49,6 @@ class RiceDetails extends Component {
       <>
         <div id="rice-details">
           <Container>
-            <LinearProgress />
-            <div className="foods">
-              <h1 className="title"> Foods</h1>
-            </div>
-            <Search />
             <Row>
               {products.map((product) => (
                 <Col sm="3">

@@ -36,10 +36,10 @@ const SoftDrinks = ({ handleClick }) => {
     <>
       <div id="soft-drinks">
         <Container>
-          <Search />
+          {/* <Search /> */}
           <Row>
             {lists.map((list) => (
-              <Col md="4" key={list.id} className="hover-css" >
+              <Col md="4" key={list.id}>
                 <Card className="cart">
                   <CardImg style={{ width: 130, height: 120, margin: 20 }} src={list.image} />
                   <div>
@@ -62,7 +62,7 @@ const SoftDrinks = ({ handleClick }) => {
                 </Card>
               </Col>
             ))}
-           
+
           </Row>
         </Container>
       </div>
